@@ -630,14 +630,27 @@ func (a *api) UpdateGroup(group *Group) (err error) {
 
 	req := &updateGroupReq{}
 	req.GroupId = group.id
-	req.Name = group.name
-	req.FaceUrl = group.avatar
-	req.Introduction = group.introduction
-	req.Notification = group.notification
-	req.MaxMemberNum = group.maxMemberNum
-	req.ApplyJoinOption = group.applyJoinOption
-	req.ShutUpAllMember = group.shutUpStatus
-
+	if group.name != "" {
+		req.Name = group.name
+	}
+	if group.avatar != "" {
+		req.FaceUrl = group.avatar
+	}
+	if group.introduction != "" {
+		req.Introduction = group.introduction
+	}
+	if group.notification != "" {
+		req.Notification = group.notification
+	}
+	if group.maxMemberNum != 0 {
+		req.MaxMemberNum = group.maxMemberNum
+	}
+	if group.applyJoinOption != "" {
+		req.ApplyJoinOption = group.applyJoinOption
+	}
+	if group.shutUpStatus != "" {
+		req.ShutUpAllMember = group.shutUpStatus
+	}
 	if data := group.GetAllCustomData(); data != nil {
 		req.AppDefinedData = make([]customDataItem, 0, len(data))
 		for key, val := range data {
