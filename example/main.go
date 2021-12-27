@@ -12,9 +12,9 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/dobyte/tencent-im"
-	"github.com/dobyte/tencent-im/account"
-	"github.com/dobyte/tencent-im/callback"
+	"github.com/fumenglin/tencent-im"
+	"github.com/fumenglin/tencent-im/account"
+	"github.com/fumenglin/tencent-im/callback"
 )
 
 func main() {

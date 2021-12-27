@@ -1,4 +1,4 @@
-module github.com/dobyte/tencent-im
+module github.com/fumenglin/tencent-im
 
 go 1.16
 
